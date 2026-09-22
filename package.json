@@ -1,0 +1,59 @@
+{
+  "name": "pi-cache-compact",
+  "version": "0.1.0",
+  "description": "Cache-friendly context compaction for Pi: write the handoff summary as a cache-hit continuation instead of a cold, re-serialized prompt.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Lennart Schoch",
+  "main": "src/extension.ts",
+  "exports": {
+    ".": "./src/extension.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/extension.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lennartschoch/pi-cache-compact.git"
+  },
+  "homepage": "https://github.com/lennartschoch/pi-cache-compact#readme",
+  "bugs": {
+    "url": "https://github.com/lennartschoch/pi-cache-compact/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "test:e2e": "PI_CACHE_COMPACT_E2E=1 node --test test/e2e.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test"
+  },
+  "keywords": [
+    "pi",
+    "pi-package",
+    "pi-extension",
+    "compaction",
+    "prompt-cache",
+    "llama.cpp"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "0.87.0",
+    "@earendil-works/pi-ai": "0.87.0",
+    "@earendil-works/pi-coding-agent": "0.87.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
