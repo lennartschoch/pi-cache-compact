@@ -1,6 +1,6 @@
 {
   "name": "pi-cache-compact",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Cache-friendly context compaction for Pi: write the handoff summary as a cache-hit continuation instead of a cold, re-serialized prompt.",
   "type": "module",
   "license": "MIT",
@@ -11,6 +11,7 @@
   },
   "files": [
     "src",
+    "scripts",
     "README.md",
     "LICENSE"
   ],
